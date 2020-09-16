@@ -332,7 +332,7 @@ public class ZermiaServerMain {
 		}.start();
 		
 		try {
-			ServerZ.BootReplicaStart();				//local boot of replicas
+			ServerZ.BootReplicaStart();				//local boot of replicas, disable this if not running on localhost, needs to be recompiled again and put on Zermia main folder
 			Thread.sleep(props.getClientBootTime());
 			ServerZ.BootClientStart();				//local boot of clients
 		} catch (Exception e) {
