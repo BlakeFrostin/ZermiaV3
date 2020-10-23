@@ -6,7 +6,7 @@ How to use
 
 Ficheiros a configurar antes de correr
 
-PARTE DO CLIENTE (ZermiaClient)
+PARTE DO CLIENTE (ZermiaClient) (Copiar a pasta toda para cada replica)
 
 --zermiaRuntime.properties dentro da pasta do bftsmart (library-master)
 
