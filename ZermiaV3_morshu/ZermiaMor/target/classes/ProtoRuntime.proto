@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option java_package = "zermia.proto";
+
+
+service ZermiaServices{
+	rpc FirstConnection (ConnectionRequest) returns (ConnectionReply) {}
+	rpc FaultService (FaultActivationRequest) returns (FaultActivationReply) {}
+	rpc StatsService (StatsRequest) returns (StatsReply) {}
+}
+
+//----------------------------------------------------------------------------------//
+message ConnectionRequest{ 
+	string replicaID = 1;
+}
+
+message ConnectionReply{
+	bool connectionStatus = 1;
+	bool replicaStatus = 2;
+	int32 faultScheduleSize = 3;
+}
+
+//----------------------------------------------------------------------------------//
+message FaultActivationRequest{
+	string replicaID = 1;
+	int32 faultScheduleIterator = 2;
+}
+message FaultActivationReply{
+	repeated string faultPam = 2; // more than one fault and parameter
+	repeated string runTrigger = 3;
+}
+//----------------------------------------------------------------------------------//
+
+message StatsRequest{
+	string replicaID = 1;
+	double timeFinal = 2;
+	int32 messageTotal = 3;
+}
+
+message StatsReply{
+}
+
+//----------------------------------------------------------------------------------//

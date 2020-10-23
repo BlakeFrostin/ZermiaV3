@@ -1,0 +1,1242 @@
+outubro 07, 2020 11:02:48 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:02:50 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:02:52 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:02:52 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:02:52 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 109.27 seconds
+outubro 07, 2020 11:02:52 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44214 messages
+outubro 07, 2020 11:02:52 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 405.0 messages per second
+outubro 07, 2020 11:02:52 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:15:00 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:15:01 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:15:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:15:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:15:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:15:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:15:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:15:20 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:15:20 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:15:28 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:15:28 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:15:30 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:15:30 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:16:37 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:16:38 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:16:40 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:16:40 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:16:40 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:16:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:16:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:16:45 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:16:45 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:16:48 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:16:48 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:17:07 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:17:07 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:19:05 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:19:06 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:19:08 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:19:08 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:19:08 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:19:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:19:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:19:15 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:19:15 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:19:17 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:19:17 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:19:35 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:19:35 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:24:13 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:24:14 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:24:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:24:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:24:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:24:20 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:24:20 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:24:23 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:24:23 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:24:43 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:24:43 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:26:35 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 92.0 seconds
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44155 messages
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 480.0 messages per second
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.1 millisenconds
+outubro 07, 2020 11:26:35 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 92.0 seconds
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44155 messages
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 480.0 messages per second
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.1 millisenconds
+outubro 07, 2020 11:26:35 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 92.0 seconds
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44156 messages
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 480.0 messages per second
+outubro 07, 2020 11:26:35 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.1 millisenconds
+outubro 07, 2020 11:29:28 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:29:30 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:29:31 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:29:31 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:29:31 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:29:34 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:29:34 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:29:37 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:29:37 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:29:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:29:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:29:58 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:29:58 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:31:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 102.61 seconds
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44204 messages
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 431.0 messages per second
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.3 millisenconds
+outubro 07, 2020 11:31:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 102.61 seconds
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44204 messages
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 431.0 messages per second
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.3 millisenconds
+outubro 07, 2020 11:31:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 102.61 seconds
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44206 messages
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 431.0 messages per second
+outubro 07, 2020 11:31:42 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.3 millisenconds
+outubro 07, 2020 11:34:03 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:34:04 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:34:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:34:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:34:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:34:13 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:34:13 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:34:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:34:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:34:18 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:34:18 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:34:33 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:34:33 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:36:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 101.26 seconds
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 29964 messages
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 296.0 messages per second
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.4 millisenconds
+outubro 07, 2020 11:36:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 101.26 seconds
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 29964 messages
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 296.0 messages per second
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.4 millisenconds
+outubro 07, 2020 11:36:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 101.26 seconds
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 29967 messages
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 296.0 messages per second
+outubro 07, 2020 11:36:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.4 millisenconds
+outubro 07, 2020 11:37:53 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:37:54 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:37:58 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:37:58 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:37:58 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:38:01 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:38:01 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:38:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:38:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:38:06 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:38:06 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:38:23 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:38:23 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:40:14 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 109.62 seconds
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44067 messages
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 402.0 messages per second
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:40:14 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 109.62 seconds
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44067 messages
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 402.0 messages per second
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:40:14 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 109.62 seconds
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44068 messages
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 402.0 messages per second
+outubro 07, 2020 11:40:14 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:42:00 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:42:01 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:42:07 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:42:07 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:42:07 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:42:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:42:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:42:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:42:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:42:15 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:42:15 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:42:30 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:42:30 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:44:24 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 112.12 seconds
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44282 messages
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 395.0 messages per second
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:44:24 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 112.12 seconds
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44283 messages
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 395.0 messages per second
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:44:24 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 112.12 seconds
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44283 messages
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 395.0 messages per second
+outubro 07, 2020 11:44:24 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 2.5 millisenconds
+outubro 07, 2020 11:52:36 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:52:37 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:52:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:52:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:52:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:52:41 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:52:41 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:52:44 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:52:44 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:52:47 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:52:47 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:53:06 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:53:06 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 07, 2020 11:57:22 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 07, 2020 11:57:23 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 07, 2020 11:57:25 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 07, 2020 11:57:25 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 07, 2020 11:57:25 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 07, 2020 11:57:28 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 07, 2020 11:57:28 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 07, 2020 11:57:30 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 07, 2020 11:57:30 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 07, 2020 11:57:33 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 07, 2020 11:57:33 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 07, 2020 11:57:52 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 07, 2020 11:57:52 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:03:14 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:03:15 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:03:20 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:03:20 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:03:20 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:03:23 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:03:23 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:03:25 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:03:25 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:03:28 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:03:28 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:03:44 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:03:44 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:04:39 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:04:40 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:04:43 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:04:43 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:04:43 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:04:45 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:04:45 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:04:48 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:04:48 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:04:50 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:04:50 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:05:09 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:05:09 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:07:52 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:07:53 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:07:55 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:07:55 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:07:55 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:07:58 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:07:58 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:08:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:08:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:08:04 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:08:04 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:08:22 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:08:22 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 125.25 seconds
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 881356 messages
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 7037.0 messages per second
+outubro 08, 2020 12:10:28 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 0.1 millisenconds
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 125.25 seconds
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 881356 messages
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 7037.0 messages per second
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 0.1 millisenconds
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 125.25 seconds
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 881357 messages
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 7037.0 messages per second
+outubro 08, 2020 12:10:30 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 0.1 millisenconds
+outubro 08, 2020 12:33:41 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:33:42 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:33:52 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:33:52 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:33:52 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:33:52 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:33:52 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:33:55 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:33:55 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:34:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:34:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:34:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:34:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:34:11 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:34:11 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:36:56 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:36:57 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:36:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:36:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:36:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:37:01 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:37:01 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:37:04 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:37:04 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:37:06 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:37:06 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:37:26 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:37:26 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:39:56 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:39:57 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:39:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:39:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:39:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:39:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:40:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:40:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:40:05 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:40:05 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:40:08 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:40:08 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:40:26 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:40:26 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:41:42 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:41:44 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:41:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:41:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:41:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:41:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:41:48 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:41:48 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:41:51 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:41:51 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:41:53 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:41:53 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:42:12 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:42:12 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 12:57:05 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 12:57:06 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 12:57:08 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 12:57:08 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 12:57:08 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 12:57:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 12:57:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 12:57:13 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 12:57:13 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 12:57:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 12:57:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 12:57:35 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 12:57:35 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 1:02:53 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 1:02:55 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 1:02:58 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 1:02:58 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 1:02:58 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:03:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 1:03:02 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 1:03:06 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 1:03:06 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 1:03:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 1:03:10 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 1:03:24 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 1:03:24 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 1:05:16 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 1:05:18 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 1:05:21 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 1:05:21 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 1:05:21 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:05:21 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:05:25 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 1:05:25 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 1:05:28 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 1:05:28 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 1:05:30 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 1:05:30 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 1:05:46 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 1:05:46 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 1:10:13 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 1:10:14 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 1:10:16 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 1:10:16 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 1:10:16 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:10:16 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:10:19 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 1:10:19 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 1:10:22 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 1:10:22 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 1:10:24 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 1:10:24 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 1:10:43 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 1:10:43 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 138.51 seconds
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44411 messages
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 321.0 messages per second
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.1 millisenconds
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 138.51 seconds
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44413 messages
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 321.0 messages per second
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.1 millisenconds
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 end test at 138.51 seconds
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 received 44414 messages
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has a throughput of : 321.0 messages per second
+outubro 08, 2020 1:13:03 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: Replica 0 has an average latency of : 3.1 millisenconds
+outubro 08, 2020 1:17:12 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 1:17:13 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 1:17:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 1:17:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 1:17:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:17:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:17:15 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 1:17:18 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 1
+outubro 08, 2020 1:17:18 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 1
+outubro 08, 2020 1:17:20 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 2
+outubro 08, 2020 1:17:20 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 2
+outubro 08, 2020 1:17:24 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 3
+outubro 08, 2020 1:17:24 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to non-faulty Replica number 3
+outubro 08, 2020 1:17:42 DA MANHÃ zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 1:17:42 DA MANHÃ zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 6:23:53 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 08, 2020 6:23:55 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 08, 2020 6:24:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 6:24:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 6:24:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 6:24:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 6:24:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 6:24:23 DA TARDE zermia.properties.ZermiaCodeClient getClientCode
+INFO: Client Code Obtained with success
+outubro 08, 2020 6:24:23 DA TARDE zermia.local.boot.ZermiaClientLocalBoot bootStrapClient
+INFO: Starting bootStrap for client
+outubro 08, 2020 6:25:02 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 08, 2020 6:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 08, 2020 6:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 6:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 08, 2020 6:25:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:41:59 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:42:01 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:47:11 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:47:12 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:47:28 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:32 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:34 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:36 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:38 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:42 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:47:42 DA TARDE io.grpc.internal.SerializingExecutor run
+SEVERE: Exception while executing runnable io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed@1c8a109
+java.lang.IndexOutOfBoundsException: Index: 5, Size: 5
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559)
+	at java.base/java.util.LinkedList.get(LinkedList.java:480)
+	at zermia.proto.services.ZermiaRuntimeServices.faultService(ZermiaRuntimeServices.java:73)
+	at zermia.proto.ZermiaServicesGrpc$MethodHandlers.invoke(ZermiaServicesGrpc.java:285)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:817)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+outubro 10, 2020 5:47:45 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:48:05 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:48:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 10, 2020 5:52:11 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:52:12 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:52:25 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:52:25 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:52:54 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:52:55 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:52:57 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:52:57 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:16 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:53:17 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:53:23 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:23 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:39 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:49 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:49 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:53 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:53 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:55 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:55 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:53:56 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:53:56 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:54:05 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:54:05 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:54:09 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:54:09 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:54:47 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:54:47 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:55:07 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:55:08 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:55:10 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:55:10 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:55:12 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:55:12 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:55:39 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:55:41 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:55:48 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:55:48 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:56:03 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:56:04 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:56:05 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:56:05 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 5:57:08 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 5:57:10 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 5:57:13 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 5:57:13 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:03:58 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:03:59 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:04:39 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:04:39 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:04:52 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:04:53 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:04:54 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:04:54 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:05:14 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:05:16 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:05:16 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:05:16 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:06:36 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:06:37 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:06:38 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:06:38 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:07:00 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:07:01 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:07:03 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:07:03 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:10:55 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:10:56 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:10:59 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:10:59 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 10, 2020 6:11:12 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 10, 2020 6:11:13 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 10, 2020 6:11:17 DA TARDE zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 10, 2020 6:11:17 DA TARDE zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 11, 2020 12:56:14 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 11, 2020 12:56:16 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 11, 2020 12:56:18 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices statsService
+INFO: Stats Request from runtime Replica : 0
+outubro 11, 2020 12:56:19 DA MANHÃ zermia.stats.ZermiaStats calculateAll
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 12, 2020 9:13:00 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 12, 2020 9:13:01 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 12, 2020 9:13:22 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 12, 2020 9:13:22 DA TARDE zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 13, 2020 1:47:31 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 13, 2020 1:47:33 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 13, 2020 1:47:42 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:45 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:48 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:50 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:50 DA MANHÃ io.grpc.internal.SerializingExecutor run
+SEVERE: Exception while executing runnable io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed@171efabd
+java.lang.IndexOutOfBoundsException: Index: 5, Size: 5
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559)
+	at java.base/java.util.LinkedList.get(LinkedList.java:480)
+	at zermia.proto.services.ZermiaRuntimeServices.faultService(ZermiaRuntimeServices.java:73)
+	at zermia.proto.ZermiaServicesGrpc$MethodHandlers.invoke(ZermiaServicesGrpc.java:285)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:817)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+outubro 13, 2020 1:47:54 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:56 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:47:59 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:48:01 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 1:48:06 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices faultService
+INFO: Fault ACTIVATION Request from runtime Replica : 0
+outubro 13, 2020 2:39:25 DA MANHÃ zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 13, 2020 2:39:27 DA MANHÃ zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 13, 2020 2:39:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection Request from Replica number 0
+outubro 13, 2020 2:39:46 DA MANHÃ zermia.proto.services.ZermiaRuntimeServices firstConnection
+INFO: Connection successful to Faulty Replica number 0
+outubro 14, 2020 8:10:28 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:10:52 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:11:31 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:12:24 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:12:25 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 14, 2020 8:13:26 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 14, 2020 8:13:26 DA TARDE io.grpc.internal.SerializingExecutor run
+SEVERE: Exception while executing runnable io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed@3bd03d59
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559)
+	at java.base/java.util.LinkedList.set(LinkedList.java:494)
+	at zermia.proto.services.ZermiaRuntimeServices.statsService(ZermiaRuntimeServices.java:135)
+	at zermia.proto.ZermiaServicesGrpc$MethodHandlers.invoke(ZermiaServicesGrpc.java:289)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:817)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+outubro 14, 2020 8:13:35 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 1 END OF TEST STATS --------------
+outubro 14, 2020 8:13:35 DA TARDE io.grpc.internal.SerializingExecutor run
+SEVERE: Exception while executing runnable io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed@7aa2bb07
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 0
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559)
+	at java.base/java.util.LinkedList.set(LinkedList.java:494)
+	at zermia.proto.services.ZermiaRuntimeServices.statsService(ZermiaRuntimeServices.java:135)
+	at zermia.proto.ZermiaServicesGrpc$MethodHandlers.invoke(ZermiaServicesGrpc.java:289)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:817)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+outubro 14, 2020 8:13:40 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 2 END OF TEST STATS --------------
+outubro 14, 2020 8:13:40 DA TARDE io.grpc.internal.SerializingExecutor run
+SEVERE: Exception while executing runnable io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed@2d1bf146
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 0
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559)
+	at java.base/java.util.LinkedList.set(LinkedList.java:494)
+	at zermia.proto.services.ZermiaRuntimeServices.statsService(ZermiaRuntimeServices.java:135)
+	at zermia.proto.ZermiaServicesGrpc$MethodHandlers.invoke(ZermiaServicesGrpc.java:289)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:172)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:817)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+outubro 14, 2020 8:16:44 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:16:45 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 14, 2020 8:16:49 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 14, 2020 8:25:31 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:25:33 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 14, 2020 8:25:34 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 14, 2020 8:25:39 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 1 END OF TEST STATS --------------
+outubro 14, 2020 8:25:41 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 4 END OF TEST STATS --------------
+outubro 14, 2020 8:25:44 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 5 END OF TEST STATS --------------
+outubro 14, 2020 8:25:47 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 3 END OF TEST STATS --------------
+outubro 14, 2020 8:25:50 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 6 END OF TEST STATS --------------
+outubro 14, 2020 8:25:56 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 2 END OF TEST STATS --------------
+outubro 14, 2020 8:27:29 DA TARDE zermia.server.ZermiaServerMain <clinit>
+INFO: ------------------NEW TEST STARTS HERE----------------------
+outubro 14, 2020 8:27:30 DA TARDE zermia.server.ZermiaServerMain ZermiaServer
+INFO: Server starting in port : 9090
+outubro 14, 2020 8:28:37 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 0 END OF TEST STATS --------------
+outubro 14, 2020 8:28:55 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 6 END OF TEST STATS --------------
+outubro 14, 2020 8:29:03 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 1 END OF TEST STATS --------------
+outubro 14, 2020 8:29:21 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 3 END OF TEST STATS --------------
+outubro 14, 2020 8:29:29 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 2 END OF TEST STATS --------------
+outubro 14, 2020 8:29:42 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 4 END OF TEST STATS --------------
+outubro 14, 2020 8:29:48 DA TARDE zermia.stats.ZermiaStats calculateAll2
+INFO: ------------- Replica 5 END OF TEST STATS --------------

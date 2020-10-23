@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ajdt.launching.AspectJApplication">
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="bftsmart.demo.counter.CounterServer"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="0"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="library-master"/>
+</launchConfiguration>

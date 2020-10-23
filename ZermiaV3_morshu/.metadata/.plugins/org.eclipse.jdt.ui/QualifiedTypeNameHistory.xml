@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="zermia.server.ZermiaServerClientList"/>
+    <fullyQualifiedTypeName name="zermia.runtime.ZermiaFault"/>
+    <fullyQualifiedTypeName name="zermia.properties.ZermiaRuntimeProperties"/>
+    <fullyQualifiedTypeName name="zermia.stats.ZermiaStats"/>
+    <fullyQualifiedTypeName name="zermia.proto.ProtoRuntime.StatsRequest"/>
+    <fullyQualifiedTypeName name="zermia.proto.ProtoRuntime.StatsReply"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
+    <fullyQualifiedTypeName name="java.time.Instant"/>
+    <fullyQualifiedTypeName name="zermia.runtime.ZermiaRuntime"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="zermia.properties.ZermiaProperties"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.TreeMap"/>
+</qualifiedTypeNameHistroy>
