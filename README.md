@@ -65,7 +65,8 @@ O servidor tem de correr sempre primeiro
 
 ------ No exemplo acima, Replica 0 vai correr duas falhas no mesmo intervalo, começa na ronda 1000 até ronda 2000, sendo que corre um delayer e um CPU_loader ao mesmo tempo. Mais tarde crasha na ronda 5000. Na replica 3 é corrido uma falha para enviar mensages vazias, começando na ronda 800 até 2000.
 
-------------------------- Correr Replicas do bftsmart ---------------------------------
+Correr replicas e clients do bftsmart
+----------------------------------------------------------
 
 Ir para a pasta do ZermiaClient\library-master\
 
