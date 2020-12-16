@@ -1,6 +1,6 @@
-# ZermiaV3
+# ZermiaV4
 
-23/10/2020
+16/12/2020
 How to use 
 --------------------------------------------------------
 
@@ -20,7 +20,7 @@ PARTE DO CLIENTE (ZermiaClient) (Copiar a pasta toda para cada replica)
 
 ----hosts.config e system.config (não esquecer apagar o currentView quando correr para novas configurações, ex: f=1/f=2.... )
 
-PARTE DO SERVER(ZermiaMor)
+PARTE DO SERVER(ZermiaServer)
 
 --Entrar na pasta ConfigurationProperties
 
@@ -28,11 +28,17 @@ PARTE DO SERVER(ZermiaMor)
 
 ------A porta no qual o coordenador vai iniciar
 
-------Os ID's das replicas (o IP não é preciso, era outra experimentação minha da qual vou limpar na proxima versão)
+------Os ID's das replicas
 
-------O ID do client (IP não é preciso)
+------Os ID dos clientes
 
-------Meter o numero de replicas e clientes que vão fazer parte do experimento (igual á configuração do bftsmart), sendo que é preciso digitar duas vezes ambos valores, um para o numberOfReplica e outro para o numberOfAvailableReplicas (o mesmo para o cliente). Isto vai ser limpo tambem na proxima versão(outro experimento meu por causa de novas replicas acederem ao grupo durante runtime, pelo que vou descontinuar esse processo todo de inicio).
+------Meter o numero de replicas e clientes que vão fazer parte do experimento (igual á configuração do bftsmart).
+
+--Entrar na pasta ConfigureProperties
+
+---configurar faultyReplicas.properties
+
+---modificar parametros de acordo com o objectivo, sendo que aqui se configura quais os tipos de mensagens que as replicas faltosas vão injectar falhas. (as replicas faltosas tem de ter os mesmos ids quando executado no terminal)
 
 JAVA STUFF
 -----------------------------------------------------------------------
@@ -59,11 +65,11 @@ O servidor tem de correr sempre primeiro
 
 ------ No exemplo acima esta executar um flood attack desde o round 200 até 1000 (1000 mensages extras), e corre outro flood attack desde 2000 até 3000 (2000 mensagens extras)
 
------- Exemplo de multiplas replicas : java -jar Zermia.jar Replica 0 TdelayOnce 100 1000 1000 Replica 3 TdelayOnce 100 1000 1000
+------ Exemplo de multiplas replicas : java -jar Zermia.jar Replica 0 TdelayAll 100 1000 1000 Replica 3 TdelayAll 100 1000 1000
 
 ------ Exemplo de multiplas replicas e falhas : java -jar Zermia.jar Replica 0 TdelayAll 100 Load 50 1000 1000 Crash 1 5000 1 Replica 3 0Packet 10 800 1200  
 
------- No exemplo acima, Replica 0 vai correr duas falhas no mesmo intervalo, começa na ronda 1000 até ronda 2000, sendo que corre um delayer e um CPU_loader ao mesmo tempo. Mais tarde crasha na ronda 5000. Na replica 3 é corrido uma falha para enviar mensages vazias, começando na ronda 800 até 2000.
+------ No exemplo acima, Replica 0 vai correr duas falhas no mesmo intervalo, começa na ronda de consensus 1000 até ronda 2000, sendo que corre um delayer e um CPU_loader ao mesmo tempo. Mais tarde crasha na ronda 5000. Na replica 3 é corrido uma falha para enviar mensages vazias, começando na ronda 800 até 2000.
 
 Correr replicas e clients do bftsmart
 ----------------------------------------------------------
@@ -80,6 +86,24 @@ Ir para a pasta do ZermiaClient\library-master\
 
 --------------------------------------------------------------------------------------
 
-Mal todas as replicas terminem as suas operações (faltosas podem demorar mais em alguns casos), o servidor mostra stats do teste para cada replica.
+Mal todas as replicas terminem as suas operações (faltosas podem demorar mais em alguns casos), o servidor mostra stats do teste para cada replica, bem como grava os dados de debito de cada na pasta replicastats no servidor.
 
+--------------------------------------------------------------------------------------
+
+Correr replicas e clients do bftsmart pelo YCSB
+----------------------------------------------------------
+
+-- Correr o zermia como normal (com seus parametros)
+
+-- Ir para a pasta do ZermiaClient\library-master\
+
+-- Replicas no terminal(linux) por YCSB
+
+--- java -Djava.security.properties=config/java.security -Dlogback.configurationFile=config/logback.xml  -cp bin/:lib/* bftsmart.demo.ycsb.YCSBServer 0 (modificar este "0" aqui por cada instancia da replica)
+
+-- Clientes no terminal(linux) por YCSB 
+
+--- java -Djava.security.properties=config/java.security -Dlogback.configurationFile=config/logback.xml  -cp bin/:lib/* com.yahoo.ycsb.Client -threads 1 -P config/workloads/workloada -p measurementtype=timeseries -p timeseries.granularity=1000 -db bftsmart.demo.ycsb.YCSBClient -s >> output.txt
+
+--- O output é escrito para um ficheiro na mesma pasta do client sob o nome output.txt
 
