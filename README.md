@@ -103,7 +103,7 @@ Correr replicas e clients do bftsmart pelo YCSB
 
 -- Clientes no terminal(linux) por YCSB 
 
---- java -Djava.security.properties=config/java.security -Dlogback.configurationFile=config/logback.xml  -cp bin/:lib/* com.yahoo.ycsb.Client -threads 1 -P config/workloads/workloada -p measurementtype=timeseries -p timeseries.granularity=1000 -db bftsmart.demo.ycsb.YCSBClient -s >> output.txt
+--- java -Djava.security.properties=config/java.security -Dlogback.configurationFile=config/logback.xml  -cp bin/:lib/* com.yahoo.ycsb.Client -threads 10 -P config/workloads/workloada -p measurementtype=timeseries -p timeseries.granularity=1000 -db bftsmart.demo.ycsb.YCSBClient -s >> output.txt
 
---- O output é escrito para um ficheiro na mesma pasta do client sob o nome output.txt
+--- O output é escrito para um ficheiro na mesma pasta do client sob o nome output.txt. Modificar o numero de clientes em cima em "-threads 10" para outro para sem ser 10. Modificar granularidade de acordo com o que se quer, default é 1 segundo.
 
