@@ -1,6 +1,6 @@
-# ZermiaV4
+# ZermiaV5
 
-16/12/2020
+28/04/2021
 How to use 
 --------------------------------------------------------
 
@@ -70,6 +70,12 @@ O servidor tem de correr sempre primeiro
 ------ Exemplo de multiplas replicas e falhas : java -jar Zermia.jar Replica 0 TdelayAll 100 Load 50 1000 1000 Crash 1 5000 1 Replica 3 0Packet 10 800 1200  
 
 ------ No exemplo acima, Replica 0 vai correr duas falhas no mesmo intervalo, começa na ronda de consensus 1000 até ronda 2000, sendo que corre um delayer e um CPU_loader ao mesmo tempo. Mais tarde crasha na ronda 5000. Na replica 3 é corrido uma falha para enviar mensages vazias, começando na ronda 800 até 2000.
+
+
+------ Exemplo de correr replicas e clientes :  java -jar Zermia.jar Replica 0 TdelayAll 200 2500 2500 Client 50 PNRS 1 50 50
+
+------ No exemplo em cima é corrido um schedule para replica 0 e depois um schedule é corrido para 50 clientes do protocolo. Esta falha faz com que não sejam enviados requests para primaria. É de notar que o numero de rondas funcionam de forma diferente nos clientes. Sendo que por exemplo quando a replica chega á ronda 2500 o cliente estara a chegar a ronda 50 (50*50 = 2500)
+
 
 Correr replicas e clients do bftsmart
 ----------------------------------------------------------
