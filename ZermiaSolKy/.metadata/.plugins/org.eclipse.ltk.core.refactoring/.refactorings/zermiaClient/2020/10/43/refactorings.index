@@ -1,0 +1,6 @@
+1603543596647	Rename type 'ZermiaProperties'
+1603544942549	Rename type 'ZermiaEndStats'
+1603553467607	Move compilation unit
+1603553489797	Rename type 'zermiaRuntimeChannel'
+1603553603685	Delete element
+1603553614858	Rename package 'zermia.runtime.network'
