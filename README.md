@@ -38,7 +38,7 @@ PARTE DO SERVER(ZermiaServer)
 
 ---configurar faultyReplicas.properties
 
----modificar parametros de acordo com o objectivo, sendo que aqui se configura quais os tipos de mensagens que as replicas faltosas vão injectar falhas. (as replicas faltosas tem de ter os mesmos ids quando executado no terminal)
+---modificar parametros de acordo com o objectivo, sendo que aqui se configura quais os tipos de mensagens que as replicas faltosas vão injectar falhas. (as replicas faltosas tem de ter os mesmos ids quando executado no terminal senão dá erro) <- IMPORTANTE
 
 JAVA STUFF
 -----------------------------------------------------------------------
