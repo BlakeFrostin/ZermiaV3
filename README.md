@@ -1,6 +1,6 @@
-# ZermiaV5
+# ZermiaV7
 
-28/04/2021
+20/09/2021
 How to use 
 --------------------------------------------------------
 
@@ -10,7 +10,7 @@ PARTE DO CLIENTE (ZermiaClient) (Copiar a pasta toda para cada replica)
 
 --zermiaRuntime.properties dentro da pasta do bftsmart (library-master)
 
-----meter o ip e porta do coordendor para troca de informação
+----meter o ip e porta do coordenador para troca de informação
 
 ----meter o numero de rondas totais (tem de ser igual ao numero de rondas quando vão iniciar um cliente)
 
@@ -42,7 +42,7 @@ PARTE DO SERVER(ZermiaServer)
 
 JAVA STUFF
 -----------------------------------------------------------------------
-Antes de correr o Zermia é preciso o Oracle Java JDK 15 instalado
+Antes de correr o Zermia é preciso o Oracle Java JDK 15/16/17 instalado (modificar o numero abaixo)
 
 --caso não tenha instalado, faça o seguinte:
 
@@ -57,7 +57,7 @@ INICIAR SERVER
 
 O servidor tem de correr sempre primeiro
 
---Ir para pasta ZermiaMor\
+--Ir para pasta ZermiaServer\
 
 ---- java -jar Zermia.jar [parametros]
 
