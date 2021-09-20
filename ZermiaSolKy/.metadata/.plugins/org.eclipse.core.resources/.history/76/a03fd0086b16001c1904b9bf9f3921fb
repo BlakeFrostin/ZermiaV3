@@ -1,0 +1,627 @@
+package bftsmart.aspect.zermia;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.lang.reflect.Array;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.concurrent.locks.ReentrantLock;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+import bftsmart.communication.SystemMessage;
+import bftsmart.consensus.messages.ConsensusMessage;
+import bftsmart.reconfiguration.VMMessage;
+import bftsmart.statemanagement.SMMessage;
+import bftsmart.tom.core.messages.ForwardedMessage;
+import bftsmart.tom.core.messages.TOMMessage;
+import bftsmart.tom.leaderchange.LCMessage;
+import bftsmart.tom.util.TOMUtil;
+import zermia.faults.BigPacketFault;
+import zermia.faults.CrashFault;
+import zermia.faults.Leakv2Fault;
+import zermia.faults.PacketDropperFault;
+import zermia.faults.RandomPacketFault;
+import zermia.faults.StackLeakFault;
+import zermia.faults.ThreadDelayFault;
+import zermia.faults.ZeroPacketFault;
+import zermia.runtime.ZermiaRuntime;
+import zermia.stats.Zermia1sec;
+import zermia.stats.ZermiaStatsTime;
+
+@Aspect
+public class ZermiaAspectFaultManager3 {
+	static volatile Integer run;
+	static volatile Integer formerRun=0;
+	volatile Boolean sendStatsOnce = true;
+	volatile boolean loadOnce = true; //test
+	byte[] msgData;
+	
+	static ZermiaStatsTime timeStat = new ZermiaStatsTime();
+	static Zermia1sec timeStat1sec = new Zermia1sec();
+	
+	volatile boolean kekw = true; //LoadLoop for cpu load
+	
+	static volatile boolean FaultOnOff = false;
+	static volatile boolean changeR = false;
+	//static volatile boolean YEP_copy = false;
+	static byte[] msgCopy;
+	
+	static ReentrantLock z_lock = new ReentrantLock();
+	
+	static int[] nTarget = new int[1];
+	static int viewNumber = 0;
+	
+	class threadLoad extends Thread{  //needed for fault load, just throw anything to make some cpu waste
+		public void run(){  
+		while(kekw) {
+			Integer wasting = 2;
+			Integer twaste = 1024*1024*1024;
+			while(wasting<twaste) {
+				wasting = wasting * 2;
+			}
+		}}}
+
+	
+//----------------------------------------------------------------------------------//	
+	
+	@Before("execution (* bftsmart.communication.ServerCommunicationSystem.send*(..))")
+	public void advice1(JoinPoint joinPoint) throws Throwable {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		
+		
+		
+		if (zR.getReplicaFaultState().equals(true)) {
+			SystemMessage Smessage = (SystemMessage) joinPoint.getArgs()[1];
+			 if(Smessage instanceof TOMMessage) {
+		        	
+	        	if(ZermiaRuntime.getInstance().getCreply()) { //client reply
+	        		//System.out.println("Mensagem de Reply para cliente");
+	        		//FaultOnOff = true;
+	        	}
+		     }
+		}
+	}
+	
+//----------------------------------------------------------------------------------//	
+	
+	@Around("execution (* bftsmart.communication.server.ServersCommunicationLayer.send*(..))")
+	public void advice2(ProceedingJoinPoint joinPoint) throws Throwable {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		Object[] arg = joinPoint.getArgs();
+		SystemMessage Smessage = (SystemMessage) joinPoint.getArgs()[1];
+		
+		
+		if (Smessage instanceof ConsensusMessage) {
+			
+			ConsensusMessage cMessage = (ConsensusMessage) Smessage;
+			run = cMessage.getNumber();
+            formerRun=run; //
+            //System.out.println("RUN" + run);
+            if (cMessage.getNumber() > run) {
+                run = cMessage.getNumber();
+                viewNumber=cMessage.getEpoch();
+            	}
+            
+		}
+		
+		if (zR.getReplicaFaultState().equals(true)) {
+			if (Smessage instanceof ConsensusMessage) {
+				
+				ConsensusMessage cMessage = (ConsensusMessage) Smessage;	
+				
+	            switch(cMessage.getPaxosVerboseType()){
+	            	case "PROPOSE": {
+		                if(ZermiaRuntime.getInstance().getCsPrP()) {
+		                	//System.out.println("Mensagem de pre-prepare");
+		                	FaultOnOff = true;
+		                }
+	                break;}
+	                case "WRITE": {
+		                if(ZermiaRuntime.getInstance().getCsPr()) {
+		                	//System.out.println("Mensagem de prepare");
+		                	FaultOnOff = true;	
+		                }
+	                break;}
+	                case "ACCEPT": {
+		                if(ZermiaRuntime.getInstance().getCsCm()) {
+		                  	//System.out.println("Mensagem de commit");
+		                	FaultOnOff = true;
+		                }
+	                break;}
+	            }
+	            
+	            
+			} else if(Smessage instanceof ForwardedMessage) { //message forwarding to Leader
+		       	 if(ZermiaRuntime.getInstance().getFw()) {
+		       		 //System.out.println("Mensagem de forwarded");
+		       		 FaultOnOff = true; 	 
+		       	 }
+			} else if(Smessage instanceof LCMessage) { //leaderchange
+	        	LCMessage getLC = (LCMessage) Smessage;
+	        	
+	        	//getLC.getType();
+	        	//3=STOP, 4=STOPDATA, 5=SYNC
+	        	
+	        	if(ZermiaRuntime.getInstance().getVc()) {
+	        		//System.out.println("Mensagem de ViewChange");
+	        		FaultOnOff = true;
+	        		//if(getLC.getType()==3) {
+	        			//
+	        			//writeStopPayload(getLC.getPayload());
+	        			//
+	        			//YEP_copy = true;
+	        			
+	        		//}	
+	        	}	
+	        	
+	        	if(getLC.getType()==3 && ZermiaRuntime.getInstance().getVcStop()){
+	        		FaultOnOff = true;
+	        	}
+	        	if(getLC.getType()==4 && ZermiaRuntime.getInstance().getVcStopD()){
+	        		FaultOnOff = true;
+	        	}
+	        	if(getLC.getType()==5 && ZermiaRuntime.getInstance().getVcSync()){
+	        		FaultOnOff = true;
+	        	}
+	        	
+	        } else if(Smessage instanceof SMMessage) { //checkpoint stuff
+	        	
+	        	if(ZermiaRuntime.getInstance().getCk()) {
+	        		//System.out.println("Mensagem de Checkpoint");
+	        		FaultOnOff = true;	
+	        	}	
+	        } else if(Smessage instanceof VMMessage) { //reconfigure stuff
+	        	if(ZermiaRuntime.getInstance().getCk()) {
+	        		//System.out.println("Mensagem de VMM");
+	        		FaultOnOff = true;	
+	        	}	
+	        }
+		}
+
+		//no caso de um ataque focado na primaria durante uma view change, muda o target para o proximo leader de antemão
+		if(run!=null) {
+			if (zR.getReplicaFaultState().equals(true) && ZermiaRuntime.getInstance().getCurrentPrimary()!=null && zR.getRunStart() <= run && zR.getRunTrigSum()> run && FaultOnOff) {
+				if(zR.getFprimary() && Smessage instanceof LCMessage && verifyRegency() && changeR) {
+					changeR=false;
+					nTarget[0] = zR.getCurrentPrimary() + 1;
+					arg[0] = nTarget;
+				} else if(zR.getFprimary()) {
+					arg[0] = (int[]) setPrimaryTarget();
+					} 	
+			}
+		}
+		
+		//Function to craft a stop message, whereas the payload is a copy of former payload from another run
+		if(run!=null && zR.getRunStart() <= run && zR.getRunTrigSum()> run) {
+			for (int i = 0; i < zR.getFaultPamList().get(zR.getListIterator()).size(); i = i + 2) {
+				String faultN = zR.getFaultPamList().get(zR.getListIterator()).get(i);
+				switch(faultN) {
+					case"FloodStop":{
+						LCMessage stop = new LCMessage(Integer.valueOf(zR.getID()), TOMUtil.STOP,(viewNumber+1), readStopPayload());
+						 arg[1]=stop;
+						 break;
+					}
+					case"FloodStopNextPrimary":{
+						 LCMessage stop = new LCMessage(Integer.valueOf(zR.getID()), TOMUtil.STOP,(viewNumber+1), readStopPayload());
+						 nTarget[0]=((viewNumber+1)%zR.getGroupSize());
+						 arg[0] = nTarget;
+						 arg[1]=stop;
+						 break;
+					}
+					
+				} 
+			}
+		}
+		
+		joinPoint.proceed(arg);
+	}
+	
+
+//----------------------------------------------------------------------------------//	
+	@Around("execution (* bftsmart.communication.server.ServerConnection.sendBytes*(..))")
+	public void advice3(ProceedingJoinPoint joinPoint) throws Throwable {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		Object[] arg = joinPoint.getArgs();
+		msgData =  (byte[]) joinPoint.getArgs()[0];
+		 statsStuff();
+		 //statsStuff1sec();
+//		if(YEP_copy) {
+//			msgCopy = msgData;
+//		}
+		 
+		 
+		if (zR.getReplicaFaultState().equals(false) || run == null) {
+			//if not faulty do nothing
+		} else {
+			 if(zR.getRunTrigSum().equals(run)) {
+				 kekw = false;
+				 loadOnce = true;
+				 if(zR.getFaultScheduleSize()>zR.getListIterator()) {
+					 zR.increaseListIterator();
+					 zR.setRunTrigger(Integer.parseInt(zR.getRunTriggerList().get(zR.getListIterator()).get(1)));
+					 zR.setRunStart(Integer.parseInt(zR.getRunTriggerList().get(zR.getListIterator()).get(0)));
+		    		 Integer RunSum = Integer.parseInt(zR.getRunTriggerList().get(zR.getListIterator()).get(0)) +
+		    				   Integer.parseInt(zR.getRunTriggerList().get(zR.getListIterator()).get(1)); 
+		    		 zR.setRunTrigSum(RunSum); 
+				 	} else {
+		    		   zR.setReplicaFaultState(false);
+		    	   	}
+				 }
+			 else if (zR.getRunStart() <= run && zR.getRunTrigSum()> run && FaultOnOff) {
+				 
+				 
+				 zR.setBoolIterator(true);
+				 for (int i = 0; i < zR.getFaultPamList().get(zR.getListIterator()).size(); i = i + 2) {
+					 Integer faultArg = Integer.parseInt(zR.getFaultPamList().get(zR.getListIterator()).get(i+1));
+					 String faultN = zR.getFaultPamList().get(zR.getListIterator()).get(i);
+					 switch(faultN) {
+			       		case "TdelayAll" : {
+		        			ThreadDelayFault f = new ThreadDelayFault();
+		        			f.executeFault(faultArg);
+		        		break;}
+			       		case "Leak" : {
+		        				StackLeakFault f = new StackLeakFault();
+		        				f.executeFault(faultArg);
+		        		break;}
+			       		case "LeakCrash" : {
+		        				sendForcedStats();
+		        				StackLeakFault f = new StackLeakFault();
+		        				f.executeFault(faultArg);
+		        		break;}
+			       		case "LeakV2" : {
+			       			Leakv2Fault f = new Leakv2Fault();
+			       			f.executeFault(faultArg);
+			       		break;}
+			       		case "Load" :{ //only executes once per run
+		        			if(loadOnce) {
+			        		   loadOnce=false;
+			        		   kekw=true; //setting this flag to true for the next load fault
+			        		   for(int kj = 0; kj<faultArg; kj++) {
+			        			   threadLoad t1 = new threadLoad();
+				        		   t1.start();
+				        		   System.out.println("thread : " + kj);
+			        		   }   
+		        			}
+		        		break;}
+		        		case "Dropper" :{
+		        			PacketDropperFault f = new PacketDropperFault();
+		        			if(f.executeFault(faultArg)){
+		        				ZermiaRuntime.getInstance().increaseNumberOfMessageSentFlood(-1);
+		        				return;}
+		        		break;}
+		        		case "Crash" :{
+		        			sendForcedStats();
+		        			CrashFault f = new CrashFault();
+		        			f.executeFault();
+		        		break;}
+		        		case "RandPacket" :{
+		        			sendForcedStats();
+		        			RandomPacketFault f = new RandomPacketFault();
+		        			msgData = f.executeFault(faultArg, msgData);
+		        			//System.out.println("Data scramble" + ByteBuffer.wrap(messageData).getInt());
+		        			
+		        			arg[0] = msgData;
+		        		break;}
+		        		case "0Packet" :{
+		        			sendForcedStats();
+		        			//System.out.println("normal data" + ByteBuffer.wrap(messageData).getInt());
+		        			ZeroPacketFault f = new ZeroPacketFault();
+		        			msgData = f.executeFault(faultArg, msgData);
+		        			//System.out.println("Data scramble" + ByteBuffer.wrap(messageData).getInt());
+		        			
+		        			arg[0] = msgData;       			
+		        		break;}
+		        		case "BigPacket" :{
+		        			BigPacketFault f = new BigPacketFault();
+		        			msgData = f.executeFault(msgData, faultArg);
+		        			arg[0] = msgData;
+		        					        			
+		        			joinPoint.proceed(arg);
+		        		break;}
+		        		case "Flood" :{		
+		        			arg[0] = msgData;
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}	
+		        			ZermiaRuntime.getInstance().increaseNumberOfMessageSentFlood(faultArg);	 
+		        		break;}
+		        		case "Flood0Packet" :{
+		        			sendForcedStats();
+		        			ZeroPacketFault f = new ZeroPacketFault();
+		        			msgData = f.executeFault(100, msgData);
+		        			arg[0] = msgData;
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}	
+		        			ZermiaRuntime.getInstance().increaseNumberOfMessageSentFlood(faultArg);	 
+		        		break;}
+		        		case "FloodRandPacket" :{
+		        			sendForcedStats();
+		        			ZeroPacketFault f = new ZeroPacketFault();
+		        			msgData = f.executeFault(100, msgData);
+		        			arg[0] = msgData;
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}	
+		        			ZermiaRuntime.getInstance().increaseNumberOfMessageSentFlood(faultArg);	
+		        		break;}
+		        		case "FloodBigPacket" :{
+		        			BigPacketFault f = new BigPacketFault();
+		        			msgData = f.executeFault(msgData, 10);
+		        			arg[0] = msgData;
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}	
+		        			ZermiaRuntime.getInstance().increaseNumberOfMessageSentFlood(faultArg);	
+		        		break;}
+		        		case "FloodStop" : { //bombard with STOPS
+		        			//arg[0] = msgCopy;
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}
+		        			
+		        			//System.out.println("KEKKKK" + zR.getOldRegency() +" " +  zR.getNextRegency() + "target" + nTarget[0]);
+		        		break;}
+		        		case "FloodStopNextPrimary" : {
+		        			for(int jk=0;jk<faultArg;jk++) {
+		        				joinPoint.proceed(arg);
+		        				//statsStuff1sec();
+		        			}
+		        		}
+					 }
+				 }
+			 }	
+			 FaultOnOff = false;
+			 //YEP_copy = false;
+		}
+		joinPoint.proceed(arg);
+	}
+	
+//----------------------------------------------------------------------------------//
+	//sending stats to server when finished
+	public void statsStuff() {
+		ZermiaRuntime.getInstance().increaseNumberOfMessagesSent();
+		z_lock.lock();
+		if(run == null || run == 0) { //
+    	timeStat.startTimer();
+    	}
+    	else if(run+1 >= ZermiaRuntime.getInstance().getConsensusRoundsFinish()) {
+    		if(sendStatsOnce) {
+    			sendStatsOnce = false;
+    			ZermiaRuntime.getInstance().setTimeFinished(timeStat.endTimer());
+    			ZermiaRuntime.getInstance().statsSend();		
+    		}
+		}
+		z_lock.unlock();
+	}
+	
+//----------------------------------------------------------------------------------//
+		
+	public void sendForcedStats() { //for when a replica is about to crash
+		ZermiaRuntime.getInstance().setTimeFinished(timeStat.endTimer());
+		ZermiaRuntime.getInstance().statsSend();
+	}
+	
+//----------------------------------------------------------------------------------//
+	//sending throughput each second to server, on big tests it ends up lowering throughput of all replicas during the test, so only use it for small tests
+	public void statsStuff1sec() {
+		
+		ZermiaRuntime.getInstance().increaseNumberOfMessages1secSent();
+		z_lock.lock();
+		if(timeStat1sec.time1Sec()) {
+			ZermiaRuntime.getInstance().statSend1sec();
+		}
+		z_lock.unlock();
+	}
+	
+//----------------------------------------------------------------------------------//	
+	public byte[] messageVert(SystemMessage sm) {
+		ByteArrayOutputStream bo = new ByteArrayOutputStream(); //248
+		try {
+			new ObjectOutputStream(bo).writeObject(sm);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		byte[] smk = bo.toByteArray();
+		return smk;
+	}
+	
+	public SystemMessage messageVert2(byte[] sm, SystemMessage msk) {
+		SystemMessage smk = msk;
+		try {
+		smk = (SystemMessage) (new ObjectInputStream(new ByteArrayInputStream(sm)).readObject());
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return smk;
+	}
+	
+//----------------------------------------------------------------------------------//	
+	// return either the primary for a target, and in case the primary is compromised it picks the next correct replica to 
+	// attack (we do this since bftsmart works in a round robin scheme for viewchanging)
+	public int[] setPrimaryTarget() {
+		 int[] newTarget = new int[1];
+		 ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		 if(zR.amIthePrimary() || zR.checkFaultyReplicas(String.valueOf(zR.getCurrentPrimary()))) {
+			 newTarget[0] = zR.getCurrentPrimary();
+			 while (zR.checkFaultyReplicas(String.valueOf(newTarget[0]))) {
+				 newTarget[0] = newTarget[0] + 1;
+				 if(newTarget[0]>=zR.getGroupSize()) {
+					 newTarget[0]=0; 
+				 }
+			 } 
+			 return newTarget;
+			 
+		 } else {	
+			 newTarget[0] = ZermiaRuntime.getInstance().getCurrentPrimary();
+			 return newTarget;
+		 } 
+	}
+		
+//---------------------------------------------------------------------------------//	
+	
+	@Before("execution (* bftsmart.tom.leaderchange.LCManager.setNewLeader*(..))")
+	public void advice4(JoinPoint jpoint) {
+		Integer primaryN = (Integer) jpoint.getArgs()[0];
+		ZermiaRuntime.getInstance().setCurrentPrimary(primaryN);
+	}
+
+//---------------------------------------------------------------------------------//	
+	@AfterReturning(pointcut="execution (* bftsmart.tom.core.ExecutionManager.getCurrentLeader*(..))", returning ="currentLeader")
+	public void advice5(Object currentLeader) {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		if (zR.getReplicaFaultState().equals(true)){
+			zR.setCurrentPrimary((Integer) currentLeader);	
+		}
+	}	
+
+//---------------------------------------------------------------------------------//		
+	//@Around("execution (* bftsmart.tom.core.Synchronizer.triggerTimeout*(..))")
+/*	@Around("execution (* bftsmart.tom.core.Synchronizer.startSynchronization*(..))")
+	public void stopBombard(ProceedingJoinPoint joinPoint) throws Throwable {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		Object[] arg = joinPoint.getArgs();
+		Integer getArg1 = (Integer) joinPoint.getArgs()[0];
+		getArg1 = getArg1 +1;
+		arg[0] = getArg1;
+		
+		//System.out.println("Called" + run);
+		if (zR.getReplicaFaultState().equals(false) || run == null) {
+			//if not faulty do nothing
+		}else {
+			 if (zR.getRunStart() <= run && zR.getRunTrigSum()> run) {
+				 zR.setBoolIterator(true);
+				 for (int i = 0; i < zR.getFaultPamList().get(zR.getListIterator()).size(); i = i + 2) {
+					 Integer faultArg = Integer.parseInt(zR.getFaultPamList().get(zR.getListIterator()).get(i+1));
+					 String faultN = zR.getFaultPamList().get(zR.getListIterator()).get(i);
+				 	
+					 switch(faultN) {
+		        		case "FloodStop" : {
+		    				for(int jk=0;jk<faultArg;jk++) {
+		    					joinPoint.proceed(arg);
+		    					//System.out.println("teste " + jk);
+		    				}
+		        		break;}
+		        		default : break;
+					 }
+				 }		
+			 }	 
+		}
+		joinPoint.proceed();
+	}
+	
+	@Around("execution (* bftsmart.tom.leaderchange.LCManager.setNextReg*(..))")
+	public void changeRegency(ProceedingJoinPoint joinPoint) throws Throwable {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		if (zR.getReplicaFaultState().equals(false) || run == null) {
+			joinPoint.proceed();
+		}else {
+			Object[] arg = joinPoint.getArgs();
+			Integer getArg1 = (Integer) joinPoint.getArgs()[0];
+			getArg1 = getArg1 +1;
+			arg[0] = getArg1;
+			joinPoint.proceed(arg);
+		}
+	}
+*/
+//---------------------------------------------------------------------------------//
+	
+	@Before("execution (* bftsmart.tom.leaderchange.LCManager.setNextReg*(..))")
+	public void checkRegencyNext(JoinPoint joinPoint) {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		Integer arg1 = (Integer) joinPoint.getArgs()[0];
+		zR.setNextRegency(arg1);
+	}
+	
+	@Before("execution (* bftsmart.tom.leaderchange.LCManager.setLastReg*(..))")
+	public void checkRegencyOld(JoinPoint joinPoint) {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		Integer arg1 = (Integer) joinPoint.getArgs()[0];
+		zR.setOldRegency(arg1);
+	}
+	
+	//if old is different than next, means a view change
+	public Boolean verifyRegency() {
+		ZermiaRuntime zR = ZermiaRuntime.getInstance();
+		if(zR.getOldRegency() == zR.getNextRegency()) {
+			changeR=true;
+			return false; // no view change
+		} else {
+			return true; //view change
+		}
+	}
+		
+	String byteArrayToString(byte[] in) {
+	    char out[] = new char[in.length * 2];
+	    for (int i = 0; i < in.length; i++) {
+	        out[i * 2] = "0123456789ABCDEF".charAt((in[i] >> 4) & 15);
+	        out[i * 2 + 1] = "0123456789ABCDEF".charAt(in[i] & 15);
+	    }
+	    return new String(out);
+	}
+
+//--------------------------------------------------------------------------------//	
+	
+	public byte[] readStopPayload() {
+		FileInputStream fin = null;
+		ObjectInputStream obIS = null;
+		byte[] retornaB = null;
+		
+		try {
+			fin = new FileInputStream("savedStopPay.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			obIS = new ObjectInputStream(fin);
+			retornaB = (byte[]) obIS.readObject();
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return retornaB;
+		
+	}
+	
+	public void writeStopPayload(byte[] bs) {
+    	try {
+    	FileOutputStream fout = new FileOutputStream("savedStopPay.txt");
+    	ObjectOutputStream outputo = new ObjectOutputStream(fout);
+    	outputo.writeObject(bs);
+    	outputo.close();
+    	
+    	} catch (Exception ex) {
+    		ex.printStackTrace();
+    	}
+	}
+
+	//----------------------------------------------------------------------//
+
+	@Before("execution (* bftsmart.consensus.messages.ConsensusMessage.ConsensusMessage*(..))")
+	public void acceptMessageChange(JoinPoint joinPoint) throws Throwable {
+		
+	}
+
+}
+		
+	

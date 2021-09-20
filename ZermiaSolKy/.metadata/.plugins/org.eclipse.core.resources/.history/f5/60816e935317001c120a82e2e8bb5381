@@ -1,0 +1,381 @@
+package zermia.server;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.collect.Ordering;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import zermia.client.ZermiaClient;
+import zermia.client.ZermiaClientList;
+import zermia.properties.ZermiaMessageProperties;
+import zermia.properties.ZermiaProperties;
+import zermia.proto.services.ZermiaRuntimeServices;
+import zermia.replica.ZermiaReplica;
+import zermia.replica.ZermiaReplicaList;
+
+public class ZermiaServerMain {
+	static ZermiaProperties props = new ZermiaProperties();
+	static ZermiaMessageProperties propMessages = new ZermiaMessageProperties();
+	static Integer closeServer;
+	ZermiaReplicaList repList = new ZermiaReplicaList();
+	ZermiaClientList clientList = new ZermiaClientList();
+	static BiMap<Integer,String> faultList1 = HashBiMap.create();//trying something with priorities in faults wih bimap
+	
+//----------------------------------------------------------------------------------//	
+	//services and server start
+	public void ZermiaServer() {
+		Server zermiaServer = ServerBuilder.forPort(props.getOrchestratorPort())
+				.addService(new ZermiaRuntimeServices())
+				.build();
+				
+      try {
+          zermiaServer.start();
+          Logger.getLogger(ZermiaServerMain.class.getName()).log(Level.INFO, "Server starting in port : " + zermiaServer.getPort());
+          zermiaServer.awaitTermination(closeServer ,TimeUnit.SECONDS);
+          Logger.getLogger(ZermiaServerMain.class.getName()).log(Level.SEVERE, "Server Shutdown after the established " + closeServer + " Seconds");
+           } catch (IOException e) {
+          e.printStackTrace();
+      } catch (InterruptedException e) {
+          e.printStackTrace();
+      }
+  }	
+
+	
+//----------------------------------------------------------------------------------//
+	//populating replica and client list with ids
+	public void populatingLists(String[] listArg) {
+		List<String> arguments = Arrays.asList(listArg);
+		
+		for(int i = 0; i<props.getNumberOfReplicas(); i++ ) {
+			ZermiaReplica replica = new ZermiaReplica(props.getReplicasID(i));
+			repList.addReplica(replica.getID(), replica);
+	    }
+		
+		if(arguments.contains("Client") || arguments.contains("client")) {
+			for(int s = 0; s<listArg.length; s=s+2) {
+	    		if(listArg[s].matches("(?i)Client")){
+	    			listArg[s+1] = listArg[s+1] + "00000";
+	    			ZermiaReplica replica = new ZermiaReplica(listArg[s+1]);
+	    			repList.addReplica(replica.getID(), replica);
+	    		}
+			}
+		}
+		
+		for(int j = 0; j<props.getNumberOfClients(); j++) {
+			ZermiaClient client = new ZermiaClient(props.getClientsId(j));
+			clientList.addClient(client.getID(), client);
+		}	 
+	}		
+
+	
+//----------------------------------------------------------------------------------//
+   //gets faults from the cmd and populates lists corresponding to the faults, parameters, runs, trigger events from the specified replicas
+    public void setReplicasProperties2(String[] args) {
+    	String replicaID = null;
+    	int j = 0; 
+    	
+    	ArrayList<String> faultPam = new ArrayList<String>();
+    	ArrayList<String> runTrigger = new ArrayList<String>();
+    	LinkedList<Integer> runOrdering= new LinkedList<Integer>();  
+    	
+    	for(int i = 0; i<args.length; i=i+2) {
+    		if(args[i].matches("(?i)Replica") || args[i].matches("(?i)Client")){
+ 
+				if(!Ordering.natural().isOrdered(runOrdering)) { //checking if runs are ordered from smallest to the biggest
+					errorMessage(2,Integer.valueOf(replicaID), "Nulo");
+				}
+    			runOrdering= new LinkedList<Integer>();
+    			j=0;
+    			
+    			replicaID = args[i+1];
+    			repList.getReplica(replicaID).setFaultness(true);
+    			
+    		} else if(args[i].matches("\\d+") && args[i+1].matches("\\d+")) {
+    			if(repList.getReplica(replicaID).getRunsTriggerList().size()<j+1 || repList.getReplica(replicaID).getRunsTriggerList().isEmpty()) {
+        			runTrigger.add(args[i]);
+        			runTrigger.add(args[i+1]);//if not int then system exit
+        			repList.getReplica(replicaID).getRunsTriggerList().add(j, runTrigger);
+        			runTrigger = new ArrayList<String>();
+        			runOrdering.add(Integer.valueOf(args[i]));
+    			} else {
+    				repList.getReplica(replicaID).getRunsTriggerList().get(j).add(args[i]);
+    				repList.getReplica(replicaID).getRunsTriggerList().get(j).add(args[i+1]);//if not int then system exit
+    				runOrdering.add(Integer.valueOf(args[i]));
+    			}
+    			
+    			j=j+1;
+    		} else {
+    			if(repList.getReplica(replicaID).getFaultPamList().size()<j+1 || repList.getReplica(replicaID).getFaultPamList().isEmpty()) {
+    				if(!checkFaultName(args[i])) {
+    					errorMessage(1,Integer.valueOf(replicaID), args[i]);
+    				}
+    				
+    				faultPam.add(args[i]);
+    				faultPam.add(args[i+1]);//if not int then system exit
+    				repList.getReplica(replicaID).getFaultPamList().add(j, faultPam);
+    				faultPam = new ArrayList<String>();
+    			} else {
+    				if(!checkFaultName(args[i])) {
+    					errorMessage(1,Integer.valueOf(replicaID), args[i]);
+    				}
+    				
+    				repList.getReplica(replicaID).getFaultPamList().get(j).add(args[i]);
+    				repList.getReplica(replicaID).getFaultPamList().get(j).add(args[i+1]);//if not int then system exit
+    			}
+    		}	
+    	}
+    	
+    }
+    	
+//----------------------------------------------------------------------------------//	
+	//setting priorities for the existing faults
+	public void populatingAvailableFaults() { //available faults and priority
+		faultList1.put(1,"TdelayAll");
+		faultList1.put(2,"Leak");
+		faultList1.put(3,"Leakv2");
+		faultList1.put(4,"Load");
+		faultList1.put(5,"Dropper");
+		faultList1.put(6,"Flood");
+		faultList1.put(7,"BigPacket");
+		faultList1.put(8,"0Packet");
+		faultList1.put(9,"RandPacket");
+		faultList1.put(10,"FloodBigPacket");
+		faultList1.put(11,"FloodRandPacket");
+		faultList1.put(12,"Flood0Packet");
+		faultList1.put(13,"FloodStop");
+		faultList1.put(14,"FloodStopNextPrimary");
+		faultList1.put(15,"LeakCrash");
+		faultList1.put(16,"Crash");
+		faultList1.put(17,"TargetNon1"); //specific faults do not need priority
+		faultList1.put(18,"TargetNonPick");
+		faultList1.put(19,"TargetNonAll");
+		faultList1.put(20,"TargetPrimary");
+		faultList1.put(21,"PNRS");
+		faultList1.put(22,"DMTA");
+		faultList1.put(23,"DMTAEP");
+		faultList1.put(24,"DMTAEP2"); //diferent ops
+		faultList1.put(24,"DMTAEP3"); //diferent ops and when a faulty replica is a primary
+		faultList1.put(26,"DMTA2"); //diferent ops
+		faultList1.put(27,"DMTA3"); //diferent ops and when a faulty replica is a primary
+		faultList1.put(28,"Propose5Greater");
+		faultList1.put(29,"Propose5Less");
+		faultList1.put(30,"ProposeRandom");
+		faultList1.put(31,"Write5Greater");
+		faultList1.put(32,"Write5Less");
+		faultList1.put(33,"WriteRandom");
+		faultList1.put(34,"Accept5Greater");
+		faultList1.put(35,"Accept5Less");
+		faultList1.put(36,"AcceptRandom");
+		faultList1.put(37,"Stop5Greater");
+		faultList1.put(38,"Stop5Less");
+		faultList1.put(39,"StopRandom");
+		faultList1.put(40,"Stopdata5Greater");
+		faultList1.put(41,"Stopdata5Less");
+		faultList1.put(42,"StopdataRandom");
+	}	//adicionar operacoes especiais
+
+//----------------------------------------------------------------------------------//
+	//error message is displayed when typed wrongly in the command line
+    public void	errorMessage(Integer errorType, Integer repNumber, String fault) {
+    	switch(errorType) {
+    	case 1 : {
+    		System.out.println("**** Badly formed sentence for Replica " + repNumber + " ****");
+    		System.out.println("**** Fault " + fault +  " unrecognized ****");
+    		System.out.println("**** Available Faults : Crash, TdelayAll, Leak, LeakV2, LeakCrash, Dropper, Load, 0Packet, RandPacket, Flood, BigPacket ****"); //acrescentar restantes falhas
+    		System.out.println("**** Faults should be numbered according to the timeline they are going to be active at, going from the earliest round start to the latest one  ****");
+    		System.out.println("**** Correct Sentence Example : Replica 2 Tdelay 1000 Crash 0 100 10 Tdelay 5000 200 100 Replica 3 Tdelay 2000 100 10 Load 550 100 ****");
+    		System.exit(0);
+    		break;}
+    	case 2 : {
+    		System.out.println("**** Badly formed sentence for Replica " + repNumber + " ****");
+    		System.out.println("**** Faults should be numbered according to the timeline they are going to be active at, going from the earliest round start to the latest one  ****");
+    		System.out.println("**** Correct Sentence Example :  Replica 2 TdelayAll 1000 Crash 0 100 10 Tdelay 5000 200 100 Replica 3 TdelayAll 2000 100 10 Load 550 100****");
+    		System.exit(0);
+    		break;}
+    	}
+    }
+	
+ //----------------------------------------------------------------------------------//
+    //checking if a typed fault exists
+	public Boolean checkFaultName(String faultName) {
+		if(faultList1.containsValue(faultName)) {
+			return true;
+		} else {
+			return false;
+		}	
+	}
+	
+//----------------------------------------------------------------------------------//	
+	//full sorter
+	public String[] sorterList(String[] listArg) {
+		String[] sortedList = new String[listArg.length];		
+		sortedList=listArg;
+		ArrayList<String> argus = new ArrayList<String>();
+		Integer st=0;
+		Integer ed=0;
+		Integer testt=0;
+		Integer kk=0;
+		
+		for(int i=0;i<listArg.length;i=i+2) {
+			if(listArg[i].matches("(?i)Replica")){
+				st=i+2;
+				}
+			 else if(listArg[i].matches("\\d+") && listArg[i+1].matches("\\d+")) {
+				ed=i;
+				argus=sortingFaultPriority(argus);
+				for(int k=st;k<ed;k++) {
+					sortedList[k] = argus.get(testt);
+					testt=testt+1;
+				}
+				testt=0;
+				kk=0;
+				argus.clear();
+			} else if(listArg[i-2].matches("\\d+") && listArg[i-1].matches("\\d+")){
+				st=i;
+				argus.add(kk,listArg[i]);
+				argus.add(kk+1,listArg[i+1]);
+			} else {
+				argus.add(kk,listArg[i]);
+				argus.add(kk+1,listArg[i+1]);
+			}
+		
+		}
+		for(int omega=0;omega<sortedList.length;omega++) {
+			System.out.println(sortedList[omega]);
+		}
+		return sortedList;
+	}	
+
+//----------------------------------------------------------------------------------//		
+	//Setting fault priorities straight through selective sorting
+	public ArrayList<String> sortingFaultPriority(ArrayList<String> faultList){
+		Integer n = faultList.size();
+		@SuppressWarnings("unchecked")
+		ArrayList<String> fpList = faultToPrio((ArrayList<String>) faultList.clone());
+			
+		for(int i = 0; i<n-2; i=i+2) {
+			int min = i;
+			for(int j= i+2; j<n; j=j+2) {
+				if(Integer.valueOf(fpList.get(j)) < Integer.valueOf(fpList.get(min))) {
+					min = j;
+				}	
+			}
+		String temp1 = fpList.get(min);
+		String temp2 = fpList.get(min+1);
+		fpList.set(min, fpList.get(i));	
+		fpList.set(min+1, fpList.get(i+1));
+		fpList.set(i, temp1);
+		fpList.set(i+1, temp2);
+		}
+		
+		return prioToFault(fpList);
+	}	
+	
+//----------------------------------------------------------------------------------//
+	//helping method that changes priority to fault
+	public ArrayList<String> prioToFault (ArrayList<String> faultList){
+		for(int i=0; i<faultList.size(); i=i+2) {
+			if(faultList1.containsKey(Integer.valueOf(faultList.get(i)))) {
+				faultList.set(i, faultList1.get(Integer.valueOf(faultList.get(i))));
+			}
+		}
+		return faultList;
+	}	
+
+//----------------------------------------------------------------------------------//
+	//helping method that changes fault to priority
+	public ArrayList<String> faultToPrio (ArrayList<String> faultList){
+		for(int i=0; i<faultList.size(); i=i+2) {
+			if(faultList1.containsValue(faultList.get(i))) {
+				faultList.set(i, String.valueOf(faultList1.inverse().get(faultList.get(i))));
+			}
+		}
+		return faultList;
+	}	
+	
+//----------------------------------------------------------------------------------//	
+	//getting information about which messages to inject in each faulty replica
+	public void setFaultyReplicasMessages() {
+		for (int ds=0;ds<props.getNumberOfReplicas();ds++){
+			if(repList.getReplica(String.valueOf(ds)).getFaultness()) {
+				
+				String msgStr = propMessages.getFaultyReplicaMessagesType(ds);
+				
+				repList.getReplica(String.valueOf(ds)).setFocusPrimary(propMessages.getFocusPrimary(ds)); 
+				String[] msgStrArray = msgStr.trim().split("\\s+");
+				
+				for(int strA = 0; strA<msgStrArray.length; strA++) {
+					switch(msgStrArray[strA]) {
+						case "CsPreP":{
+							repList.getReplica(String.valueOf(ds)).setCsPrP(true);
+						break;}
+						case "CsPr":{
+							repList.getReplica(String.valueOf(ds)).setCsPr(true);
+						break;}
+						case "CsCm":{
+							repList.getReplica(String.valueOf(ds)).setCsCm(true);
+						break;}
+						case "Vc":{
+							repList.getReplica(String.valueOf(ds)).setVc(true);
+						break;}
+						case "Fw":{
+							repList.getReplica(String.valueOf(ds)).setFw(true);
+						break;}
+						case "Ck":{
+							repList.getReplica(String.valueOf(ds)).setCk(true);
+						break;}
+						case "Creply":{
+							repList.getReplica(String.valueOf(ds)).setClientReply(true);
+						break;}
+						case "VcStop":{
+							repList.getReplica(String.valueOf(ds)).setVcStop(true);
+						break;}
+						case "VcStopD":{
+							repList.getReplica(String.valueOf(ds)).setVcStopD(true);
+						break;}
+						case "VcSync":{
+							repList.getReplica(String.valueOf(ds)).setVcSync(true);
+						break;}
+					}
+				}
+			}
+		}
+	}
+	
+//----------------------------------------------------------------------------------//
+	//main
+	public static void main(String[] args) throws Exception {	
+		props.loadProperties();						//properties file loader
+		propMessages.loadProperties();
+		closeServer =  props.getServerUptime();		//server uptime in secs
+		ZermiaServerMain ServerZ = new ZermiaServerMain();
+		ServerZ.populatingAvailableFaults(); 		//fault list available
+		ServerZ.populatingLists(args);					//replica and client Lists
+		
+		if(props.getPrioritySort()) {				//if priority method is true in config
+			ServerZ.setReplicasProperties2(ServerZ.sorterList(args)); 	//priority rearrange	
+		} else {
+			ServerZ.setReplicasProperties2(args);	//if false, there is no priority rearrange
+		}
+		ServerZ.setFaultyReplicasMessages();
+		
+		
+		//ServerStart
+		new Thread() {
+			public void run(){
+				ServerZ.ZermiaServer();				//zermia server start
+			}
+		}.start();
+	}	
+}
+	
